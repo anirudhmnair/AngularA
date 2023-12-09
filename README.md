@@ -25,3 +25,42 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Application Structure
+
+This section was created while learnng the basics of angular and will consist of observations and notes created in the learning and implementation. (IGNORE TiPOS)
+
+## STEP 1
+1. create new project -> standalone
+2. if we use `ng ... --inline-template` for new componenets their html file will not be 
+generated instead we add the html as template in the .ts file
+3. create a home component (inline or not is upto the user).
+--
+4. In app.componenet.ts add the html line under template (or in the app.componenet.html) to show the 
+top bar, then import home (inside @components as well), and include it under the sections tag in the app.componenet.ts template (below top bar)
+5. in the home component add the search bar and buttons under the `<section>` & `<form>` tags
+
+## STEP 2
+STEP 2:
+1. create the housing location component
+2. import housing location to the home component and import it in the @componenet{ import []}
+3. create a housinglocation interface, this will export the properties of housinglocation
+4. the hL interface will be imporetd to home componenet.
+5. under the @components export it will be invoked
+6.we get the image assets from: readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa' -> baseurl is a readonly variable
+7. create a sample property/variable with values for the homeLocation in home componenet
+
+`housingLocation: HousingLocation = {}`
+ 
+-- --
+Inputs allow components to share data. The direction of the data sharing is from parent component to child component.
+8. **Import the INPUT DECORATOR  in hL componenet.
+9. import hL interface and create a property housingLocation of type HousingLocation to the 
+HousingLocationComponent class. 
+10. this property will be prefixed with the INPUT DECORATOR 
+
+/`@Input() housingLocation!: HousingLocation;`
+
+**INPUT DECORATOR:** *helps customize data data dispalyed in the component*
+-- --
