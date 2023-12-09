@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Application Structure
 
-This section was created while learnng the basics of angular and will consist of observations and notes created in the learning and implementation. (IGNORE TiPOS)
+This section was created while learnng the basics of angular and will consist of observations and notes created in the learning and implementation phase. (IGNORE TiPOS)
 
 ## STEP 1
 1. create new project -> standalone
@@ -42,8 +42,7 @@ top bar, then import home (inside @components as well), and include it under the
 5. in the home component add the search bar and buttons under the `<section>` & `<form>` tags
 
 ## STEP 2
-STEP 2:
-1. create the housing location component
+1. create the housingLocation (hL) component
 2. import housing location to the home component and import it in the @componenet{ import []}
 3. create a housinglocation interface, this will export the properties of housinglocation
 4. the hL interface will be imporetd to home componenet.
@@ -60,7 +59,20 @@ Inputs allow components to share data. The direction of the data sharing is from
 HousingLocationComponent class. 
 10. this property will be prefixed with the INPUT DECORATOR 
 
-/`@Input() housingLocation!: HousingLocation;`
+`@Input() housingLocation!: HousingLocation;`
+
+11. **Property Binding**: For example to send the test data in home to homelocation(hL) componenet we modify the template in home.component.ts as: 
+`<app-housing-location [housingLocation]="housingLocation"></app-housing-location>`
+This send ths data in **housingLocation** of *home.component.ts* to **[housingLocation]** in the *hL* component.
 
 **INPUT DECORATOR:** *helps customize data data dispalyed in the component*
 -- --
+
+## STEP 3:
+1. provision for dynamic values, go to hL componeents and modify its template to include:
+   a. listing photo
+   b. listing heading
+   c. listing location
+   
+   *here the image src will have property binding with the housingLocaiton.photo property to capture this values from the home.component.ts
+   `<img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{housingLocation.name}}">`
